@@ -1,9 +1,14 @@
 const pkg = require('./package.json');
+const webpack = require('webpack');
+
+const dist = 'dist';
 
 module.exports = {
   devServer: {
-    hot: true,
     open: true,
+    port: 8080,
+    // Make sure `publicPath` always starts and ends with a forward slash.
+    publicPath: `/${dist}/`,
   },
   entry: {
     [pkg.name]: `${__dirname}/${pkg.main}`,
@@ -22,9 +27,11 @@ module.exports = {
   },
   output: {
     filename: `[name].bundle.js`,
-    path: `${__dirname}/dist`,
-    publicPath: '/',
+    path: `${__dirname}/${dist}`,
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
