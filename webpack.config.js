@@ -1,6 +1,10 @@
 const pkg = require('./package.json');
 
 module.exports = {
+  devServer: {
+    hot: true,
+    open: true,
+  },
   entry: {
     [pkg.name]: `${__dirname}/${pkg.main}`,
   },
