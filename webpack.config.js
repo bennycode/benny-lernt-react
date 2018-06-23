@@ -20,6 +20,11 @@ module.exports = {
       }
     ]
   },
+  output: {
+    filename: `[name].bundle.js`,
+    path: `${__dirname}/dist`,
+    publicPath: '/',
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
