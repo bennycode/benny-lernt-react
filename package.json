@@ -10,5 +10,9 @@
   "scripts": {
     "start": "node src/main/index.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "react": "16.4.1",
+    "react-dom": "16.4.1"
+  }
 }

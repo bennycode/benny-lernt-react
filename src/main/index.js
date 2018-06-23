@@ -1,5 +1,7 @@
-const helloWorld = () => 'Hello, World!';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-console.log(helloWorld());
+const element = App;
+const container = document.getElementById('app');
 
-module.exports = helloWorld;
+ReactDOM.render(element, container);
