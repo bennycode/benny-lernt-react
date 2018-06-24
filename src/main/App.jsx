@@ -19,9 +19,20 @@ class App extends Component {
 class Paragraph extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      myTexts: props.myTexts
+      myTexts: []
     };
+  }
+
+  componentDidMount() {
+    let {myTexts} = this.state;
+
+    myTexts = myTexts.concat(this.props.myTexts);
+
+    this.setState({
+      myTexts
+    });
   }
 
   render() {
