@@ -7,9 +7,10 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div className='Wrapper'>
-      <p>{this.text}</p>
-    </div>);
+    return [
+      <p key={1}>{this.text}</p>,
+      <p key={2}>{this.text}</p>
+    ];
   }
 }
 
