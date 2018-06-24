@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
     return (
       <>
         <p>{this.text}</p>
-        <Paragraph/>
+        <Paragraph myTexts={[1337]}/>
       </>
     );
   }
@@ -19,6 +20,10 @@ class App extends Component {
 class Paragraph extends Component {
   static defaultProps = {
     myTexts: ['This is a default text.']
+  };
+
+  static propTypes = {
+    myTexts: PropTypes.arrayOf(PropTypes.string),
   };
 
   constructor(props) {
