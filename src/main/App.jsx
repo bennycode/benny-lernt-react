@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {Component, Fragment} from 'react';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.text = 'Hello, World!';
   }
 
   render() {
-    return [
-      <p key={1}>{this.text}</p>,
-      <p key={2}>{this.text}</p>
-    ];
+    return (
+      <Fragment>
+        <p key={1}>{this.text}</p>
+        <p key={2}>{this.text}</p>
+      </Fragment>
+    );
   }
 }
 
