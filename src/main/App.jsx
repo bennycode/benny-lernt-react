@@ -10,10 +10,12 @@ class App extends Component {
     return (
       <>
         <p>{this.text}</p>
-        <p>{this.text}</p>
+        <Paragraph myText={'Hello, Mars!'}/>
       </>
     );
   }
 }
+
+const Paragraph = (props) => <p>{props.myText}</p>;
 
 export default App;
