@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 class App extends Component {
   constructor() {
@@ -8,10 +8,10 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <p key={1}>{this.text}</p>
-        <p key={2}>{this.text}</p>
-      </Fragment>
+      <>
+        <p>{this.text}</p>
+        <p>{this.text}</p>
+      </>
     );
   }
 }
