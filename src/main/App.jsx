@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <>
         <p>{this.text}</p>
-        <Paragraph myTexts={['Hello, Mars!', 'Hello, Moon!']}/>
+        <Paragraph/>
       </>
     );
   }
@@ -38,5 +38,9 @@ class Paragraph extends Component {
     );
   }
 }
+
+Paragraph.defaultProps = {
+  myTexts: ['This is a default text.']
+};
 
 export default App;
