@@ -16,13 +16,6 @@ class App extends Component {
   }
 }
 
-const Paragraph = (props) => {
-  return (
-    <>
-      {props.myTexts.map(myText => <p key={myText}>{myText}</p>)}
-    </>
-  );
-};
-
+const Paragraph = (props) => <>{props.myTexts.map(myText => <p key={myText}>{myText}</p>)}</>;
 
 export default App;
