@@ -17,6 +17,10 @@ class App extends Component {
 }
 
 class Paragraph extends Component {
+  static defaultProps = {
+    myTexts: ['This is a default text.']
+  };
+
   constructor(props) {
     super(props);
 
@@ -38,9 +42,5 @@ class Paragraph extends Component {
     );
   }
 }
-
-Paragraph.defaultProps = {
-  myTexts: ['This is a default text.']
-};
 
 export default App;

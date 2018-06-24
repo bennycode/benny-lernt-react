@@ -59,9 +59,30 @@
   dependencies:
     "@babel/types" "7.0.0-beta.51"
 
+"@babel/helper-member-expression-to-functions@7.0.0-beta.51":
+  version "7.0.0-beta.51"
+  resolved "https://registry.yarnpkg.com/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.0.0-beta.51.tgz#2a42536574176588806e602eb17a52d323f82870"
+  dependencies:
+    "@babel/types" "7.0.0-beta.51"
+
+"@babel/helper-optimise-call-expression@7.0.0-beta.51":
+  version "7.0.0-beta.51"
+  resolved "https://registry.yarnpkg.com/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.0.0-beta.51.tgz#21f2158ef083a123ce1e04665b5bb84f370080d7"
+  dependencies:
+    "@babel/types" "7.0.0-beta.51"
+
 "@babel/helper-plugin-utils@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.0.0-beta.51.tgz#0f6a5f2b6d1c6444413f8fab60940d79b63c2031"
+
+"@babel/helper-replace-supers@7.0.0-beta.51":
+  version "7.0.0-beta.51"
+  resolved "https://registry.yarnpkg.com/@babel/helper-replace-supers/-/helper-replace-supers-7.0.0-beta.51.tgz#279a61afb849476c6cc70d5519f83df4a74ffa6f"
+  dependencies:
+    "@babel/helper-member-expression-to-functions" "7.0.0-beta.51"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.51"
+    "@babel/traverse" "7.0.0-beta.51"
+    "@babel/types" "7.0.0-beta.51"
 
 "@babel/helper-split-export-declaration@7.0.0-beta.51":
   version "7.0.0-beta.51"
@@ -89,12 +110,29 @@
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.0.0-beta.51.tgz#27cec2df409df60af58270ed8f6aa55409ea86f6"
 
+"@babel/plugin-proposal-class-properties@7.0.0-beta.51":
+  version "7.0.0-beta.51"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.0.0-beta.51.tgz#b5c662f862a30ace94fc48477837b1d255fa38df"
+  dependencies:
+    "@babel/helper-function-name" "7.0.0-beta.51"
+    "@babel/helper-member-expression-to-functions" "7.0.0-beta.51"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.51"
+    "@babel/helper-plugin-utils" "7.0.0-beta.51"
+    "@babel/helper-replace-supers" "7.0.0-beta.51"
+    "@babel/plugin-syntax-class-properties" "7.0.0-beta.51"
+
 "@babel/plugin-proposal-object-rest-spread@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0-beta.51.tgz#5bc469e5e6d1b84a5d6046b59e90ca016c2086d6"
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.51"
     "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.51"
+
+"@babel/plugin-syntax-class-properties@7.0.0-beta.51":
+  version "7.0.0-beta.51"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.0.0-beta.51.tgz#f0cbf6f22a879c593a07e8e141c908e087701e91"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.51"
 
 "@babel/plugin-syntax-jsx@7.0.0-beta.51":
   version "7.0.0-beta.51"
