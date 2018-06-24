@@ -10,12 +10,19 @@ class App extends Component {
     return (
       <>
         <p>{this.text}</p>
-        <Paragraph myText={'Hello, Mars!'}/>
+        <Paragraph myTexts={['Hello, Mars!', 'Hello, Moon!']}/>
       </>
     );
   }
 }
 
-const Paragraph = (props) => <p>{props.myText}</p>;
+const Paragraph = (props) => {
+  return (
+    <>
+      {props.myTexts.map(myText => <p key={myText}>{myText}</p>)}
+    </>
+  );
+};
+
 
 export default App;
