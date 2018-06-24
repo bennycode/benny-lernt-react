@@ -26,12 +26,9 @@ class Paragraph extends Component {
   }
 
   componentDidMount() {
-    let {myTexts} = this.state;
-
-    myTexts = myTexts.concat(this.props.myTexts);
-
     this.setState({
-      myTexts
+      ...this.state,
+      ...this.props
     });
   }
 
