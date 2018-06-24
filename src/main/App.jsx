@@ -19,11 +19,14 @@ class App extends Component {
 class Paragraph extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      myTexts: props.myTexts
+    };
   }
 
   render() {
     return (
-      <>{this.props.myTexts.map(myText => <p key={myText}>{myText}</p>)}</>
+      <>{this.state.myTexts.map(myText => <p key={myText}>{myText}</p>)}</>
     );
   }
 }
