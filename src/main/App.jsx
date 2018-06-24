@@ -16,6 +16,16 @@ class App extends Component {
   }
 }
 
-const Paragraph = (props) => <>{props.myTexts.map(myText => <p key={myText}>{myText}</p>)}</>;
+class Paragraph extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <>{this.props.myTexts.map(myText => <p key={myText}>{myText}</p>)}</>
+    );
+  }
+}
 
 export default App;
