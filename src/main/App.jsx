@@ -1,12 +1,16 @@
 import React from 'react';
 
-const App = () => <div className={'OuterWrapper'}>
-  <div className='InnerWrapper'>
-    <Paragraph/>
-    {Paragraph()}
-  </div>
-</div>;
+class App extends React.Component {
+  constructor() {
+    super();
+    this.text = 'Hello, World!';
+  }
 
-const Paragraph = () => <p>Hello, World!</p>;
+  render() {
+    return (<div className='Wrapper'>
+      <p>{this.text}</p>
+    </div>);
+  }
+}
 
 export default App;
