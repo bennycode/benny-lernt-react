@@ -1,4 +1,3 @@
-const pkg = require('./package.json');
 const webpack = require('webpack');
 
 const dist = 'dist';
@@ -11,7 +10,7 @@ module.exports = {
     publicPath: `/${dist}/`,
   },
   entry: {
-    [pkg.name]: `${__dirname}/${pkg.main}`,
+    [process.env.npm_package_name]: `${__dirname}/${process.env.npm_package_main}`,
   },
   mode: 'development',
   module: {
