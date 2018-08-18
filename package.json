@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "@types/hapi": "17.0.18",
+    "@types/react": "16.4.11",
+    "@types/react-dom": "16.0.7",
+    "axios": "0.18.0",
+    "hapi": "17.5.3",
     "prop-types": "15.6.2",
     "react": "16.4.2",
     "react-dom": "16.4.2"
@@ -9,24 +14,27 @@
     "@babel/plugin-proposal-class-properties": "7.0.0-rc.1",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0-rc.1",
     "@babel/preset-react": "7.0.0-rc.1",
-    "@types/react": "16.4.11",
-    "@types/react-dom": "16.0.7",
     "awesome-typescript-loader": "5.2.0",
     "babel-loader": "8.0.0-beta.4",
+    "concurrently": "3.6.1",
     "html-webpack-plugin": "3.2.0",
+    "nodemon": "1.18.3",
     "rimraf": "2.6.2",
     "typescript": "3.0.1",
     "webpack": "4.16.5",
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5"
   },
-  "main": "src/main/index.tsx",
+  "main": "dist/backend/index.js",
   "name": "benny-lernt-react",
   "private": true,
   "scripts": {
+    "build:backend": "tsc -p tsconfig.backend.json",
     "clean": "rimraf dist",
     "dist": "webpack --mode=production",
-    "start": "yarn clean && webpack-dev-server"
+    "start:backend": "tsc -w -p tsconfig.backend.json",
+    "start:frontend": "webpack-dev-server",
+    "start": "yarn clean && yarn build:backend && concurrently \"yarn start:backend\" \"nodemon\" \"yarn start:frontend\""
   },
   "version": "1.0.0"
 }

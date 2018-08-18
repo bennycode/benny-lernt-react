@@ -7,9 +7,12 @@ module.exports = {
   devServer: {
     open: true,
     port: 8080,
+    proxy: {
+      '/rest': 'http://localhost:3000',
+    },
   },
   entry: {
-    [process.env.npm_package_name]: `${__dirname}/${process.env.npm_package_main}`,
+    [process.env.npm_package_name]: `${__dirname}/src/main/frontend/index.tsx`,
   },
   mode: 'development',
   module: {
@@ -28,6 +31,7 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
+              configFileName: 'tsconfig.frontend.json',
               sourceMap: true,
               useCache: true,
             },
@@ -43,7 +47,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/main/index.html',
+      template: './src/main/frontend/index.html',
     })
   ],
   resolve: {

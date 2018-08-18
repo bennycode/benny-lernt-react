@@ -1,4 +1,5 @@
 import * as React from 'react';
+import axios from 'axios';
 
 class OrderedList extends React.Component<{ items: string[] }, { items: string[] }> {
   static defaultProps = {
@@ -12,19 +13,20 @@ class OrderedList extends React.Component<{ items: string[] }, { items: string[]
     };
   }
 
-  addItem(item: string) {
-    let {items} = this.state;
-    items.push(item);
-    items.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-    this.setState({
-      items
+  async componentDidMount() {
+    const response = await axios.get('/rest/animals');
+    const newItems = {
+      items: response.data
+    };
+    this.setState((prevState) => {
+      return {...prevState, ...newItems};
     });
   }
 
   render() {
     return (
       <ol>
-        {this.props.items.map((item, index) => <ListItem key={index} text={item}/>)}
+        {this.state.items.map((item, index) => <ListItem key={index} text={item}/>)}
       </ol>
     );
   }

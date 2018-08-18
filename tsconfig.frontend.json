@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "rootDir": "src/main"
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/main/backend"
+  ],
+  "extends": "./tsconfig.json"
+}
