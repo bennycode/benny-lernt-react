@@ -1,18 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 
-class OrderedList extends React.Component {
+class OrderedList extends React.Component<{ items: string[] }, { items: string[] }> {
   static defaultProps = {
     items: []
   };
 
-  constructor(props) {
+  constructor(props: { items: string[] }) {
     super(props);
     this.state = {
       items: props.items
     };
   }
 
-  addItem(item) {
+  addItem(item: string) {
     let {items} = this.state;
     items.push(item);
     items.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
@@ -31,12 +31,12 @@ class OrderedList extends React.Component {
 }
 
 
-class ListItem extends React.Component {
+class ListItem extends React.Component<{ text: string }> {
   static defaultProps = {
     text: ''
   };
 
-  constructor(props) {
+  constructor(props: { text: string }) {
     super(props);
   }
 

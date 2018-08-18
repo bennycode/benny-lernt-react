@@ -20,7 +20,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
-      }
+      },
+      {
+        exclude: /(node_modules)/,
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              sourceMap: true,
+              useCache: true,
+            },
+          },
+        ],
+      },
     ]
   },
   output: {
@@ -34,6 +47,6 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };

@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
-class App extends Component {
-  constructor() {
-    super();
+class App extends React.Component<{}> {
+  private text: string;
+
+  constructor(props: Object) {
+    super(props);
     this.text = 'Hello, World!';
   }
 
@@ -11,13 +13,13 @@ class App extends Component {
     return (
       <>
         <p>{this.text}</p>
-        <Paragraph myTexts={[1337]}/>
+        <Paragraph myTexts={['1337']}/>
       </>
     );
   }
 }
 
-class Paragraph extends Component {
+class Paragraph extends React.Component<{ myTexts: string[] }, { myTexts: string[] }> {
   static defaultProps = {
     myTexts: ['This is a default text.']
   };
@@ -26,7 +28,7 @@ class Paragraph extends Component {
     myTexts: PropTypes.arrayOf(PropTypes.string),
   };
 
-  constructor(props) {
+  constructor(props: { myTexts: string[] }) {
     super(props);
 
     this.state = {
@@ -35,9 +37,8 @@ class Paragraph extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      ...this.state,
-      ...this.props
+    this.setState((prevState, props) => {
+      return {...prevState, ...props};
     });
   }
 
