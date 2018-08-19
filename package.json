@@ -1,10 +1,14 @@
 {
   "dependencies": {
     "@types/hapi": "17.0.18",
+    "@types/inert": "5.1.1",
     "@types/react": "16.4.11",
     "@types/react-dom": "16.0.7",
     "axios": "0.18.0",
+    "cross-env": "5.2.0",
     "hapi": "17.5.3",
+    "inert": "5.1.0",
+    "logdown": "3.2.7",
     "prop-types": "15.6.2",
     "react": "16.4.2",
     "react-dom": "16.4.2"
@@ -25,16 +29,20 @@
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5"
   },
-  "main": "dist/backend/index.js",
+  "main": "dist/index.js",
   "name": "benny-lernt-react",
   "private": true,
   "scripts": {
-    "build:backend": "tsc -p tsconfig.backend.json",
     "clean": "rimraf dist",
-    "dist": "webpack --mode=production",
-    "start:backend": "tsc -w -p tsconfig.backend.json",
-    "start:frontend": "webpack-dev-server",
-    "start": "yarn clean && yarn build:backend && concurrently \"yarn start:backend\" \"nodemon\" \"yarn start:frontend\""
+    "dev": "yarn clean && yarn build:backend && concurrently \"yarn watch:backend\" \"nodemon\" \"yarn watch:frontend\"",
+    "dev:backend": "yarn dist:backend && concurrently \"yarn watch:backend\" \"cross-env NODE_DEBUG=prefix:* NODE_ENV=development nodemon\"",
+    "dist": "yarn clean && yarn dist:backend && yarn dist:frontend",
+    "dist:backend": "tsc -p tsconfig.backend.json",
+    "dist:frontend": "webpack --mode production",
+    "start": "yarn dist && cross-env NODE_DEBUG=prefix:* NODE_ENV=production node dist/index.js",
+    "start:backend": "node dist/index.js",
+    "watch:backend": "tsc -w -p tsconfig.backend.json",
+    "watch:frontend": "webpack-dev-server"
   },
   "version": "1.0.0"
 }
