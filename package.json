@@ -34,13 +34,12 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "yarn clean && yarn build:backend && concurrently \"yarn watch:backend\" \"nodemon\" \"yarn watch:frontend\"",
+    "dev": "yarn clean && yarn dist:backend && concurrently \"yarn watch:backend\" \"nodemon\" \"yarn watch:frontend\"",
     "dev:backend": "yarn dist:backend && concurrently \"yarn watch:backend\" \"cross-env NODE_DEBUG=prefix:* NODE_ENV=development nodemon\"",
     "dist": "yarn clean && yarn dist:backend && yarn dist:frontend",
     "dist:backend": "tsc -p tsconfig.backend.json",
     "dist:frontend": "webpack --mode production",
     "start": "yarn dist && cross-env NODE_DEBUG=prefix:* NODE_ENV=production node dist/index.js",
-    "start:backend": "node dist/index.js",
     "watch:backend": "tsc -w -p tsconfig.backend.json",
     "watch:frontend": "webpack-dev-server"
   },

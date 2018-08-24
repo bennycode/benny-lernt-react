@@ -31,7 +31,6 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: 'tsconfig.frontend.json',
               sourceMap: true,
               useCache: true,
             },
