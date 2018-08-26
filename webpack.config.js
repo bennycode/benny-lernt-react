@@ -18,13 +18,6 @@ module.exports = {
   module: {
     rules: [
       {
-        exclude: /(bower_components|node_modules)/,
-        test: /\.jsx?$/,
-        use: {
-          loader: 'babel-loader',
-        }
-      },
-      {
         exclude: /(node_modules)/,
         test: /\.tsx?$/,
         use: [
