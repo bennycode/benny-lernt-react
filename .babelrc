@@ -4,6 +4,7 @@
     "@babel/plugin-proposal-object-rest-spread"
   ],
   "presets": [
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ]
 }
