@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const dist = 'dist';
+const dist = path.resolve(__dirname, 'dist', 'frontend');
+const src = path.resolve(__dirname, 'src', 'main', 'frontend');
 
 module.exports = {
   devServer: {
@@ -13,7 +14,7 @@ module.exports = {
     },
   },
   entry: {
-    [process.env.npm_package_name]: `${__dirname}/src/main/frontend/index.tsx`,
+    [process.env.npm_package_name]: path.resolve(src, 'index.tsx'),
   },
   mode: 'development',
   module: {
@@ -27,12 +28,12 @@ module.exports = {
   },
   output: {
     filename: `[name].bundle.js`,
-    path: `${__dirname}/${dist}/frontend`,
+    path: path.resolve(dist),
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'main', 'frontend', 'index.html'),
+      template: path.resolve(src, 'index.html'),
     })
   ],
   resolve: {
