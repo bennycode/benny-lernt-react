@@ -32,7 +32,6 @@ class OrderedList extends React.Component<{ items: string[] }, { items: string[]
   }
 }
 
-
 class ListItem extends React.Component<{ text: string }> {
   static defaultProps = {
     text: ''
