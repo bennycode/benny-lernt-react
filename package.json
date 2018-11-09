@@ -1,20 +1,20 @@
 {
   "dependencies": {
-    "@types/hapi": "17.6.2",
+    "@types/hapi": "17.6.3",
     "@types/inert": "5.1.2",
-    "@types/react": "16.4.18",
+    "@types/react": "16.7.1",
     "@types/react-dom": "16.0.9",
     "axios": "0.18.0",
     "cross-env": "5.2.0",
-    "hapi": "17.6.0",
-    "inert": "5.1.0",
+    "hapi": "17.7.0",
+    "inert": "5.1.2",
     "logdown": "3.2.7",
     "prop-types": "15.6.2",
-    "react": "16.6.0",
-    "react-dom": "16.6.0"
+    "react": "16.6.1",
+    "react-dom": "16.6.1"
   },
   "devDependencies": {
-    "@babel/core": "7.1.2",
+    "@babel/core": "7.1.5",
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
     "@babel/preset-react": "7.0.0",
@@ -22,10 +22,10 @@
     "babel-loader": "8.0.4",
     "concurrently": "4.0.1",
     "html-webpack-plugin": "3.2.0",
-    "nodemon": "1.18.4",
+    "nodemon": "1.18.6",
     "rimraf": "2.6.2",
-    "typescript": "3.1.3",
-    "webpack": "4.22.0",
+    "typescript": "3.1.6",
+    "webpack": "4.25.1",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.10"
   },
