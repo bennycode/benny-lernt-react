@@ -7,7 +7,7 @@
     "axios": "0.18.0",
     "cross-env": "5.2.0",
     "hapi": "17.6.0",
-    "inert": "5.1.0",
+    "inert": "5.1.2",
     "logdown": "3.2.7",
     "prop-types": "15.6.2",
     "react": "16.6.0",
