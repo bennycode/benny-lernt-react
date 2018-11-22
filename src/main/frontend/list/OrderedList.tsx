@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
+import ListItem from "./ListItem";
 
 class OrderedList extends React.Component<{ items: string[] }, { items: string[] }> {
   static defaultProps = {
@@ -32,18 +33,6 @@ class OrderedList extends React.Component<{ items: string[] }, { items: string[]
   }
 }
 
-class ListItem extends React.Component<{ text: string }> {
-  static defaultProps = {
-    text: ''
-  };
+export default OrderedList;
 
-  constructor(props: { text: string }) {
-    super(props);
-  }
 
-  render() {
-    return <li>{this.props.text}</li>;
-  }
-}
-
-export {OrderedList, ListItem};
