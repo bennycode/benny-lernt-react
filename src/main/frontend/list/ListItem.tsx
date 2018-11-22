@@ -1,6 +1,10 @@
 import * as React from "react";
 
-class ListItem extends React.Component<{ text: string }> {
+interface Props {
+  text: string
+}
+
+class ListItem extends React.Component<Props> {
   static defaultProps = {
     text: ''
   };

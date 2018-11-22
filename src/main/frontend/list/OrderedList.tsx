@@ -2,7 +2,15 @@ import * as React from 'react';
 import axios from 'axios';
 import ListItem from "./ListItem";
 
-class OrderedList extends React.Component<{ items: string[] }, { items: string[] }> {
+interface Props {
+  items: string[]
+}
+
+interface State {
+  items: string[]
+}
+
+class OrderedList extends React.Component<Props, State> {
   static defaultProps = {
     items: []
   };
