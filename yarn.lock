@@ -2207,10 +2207,10 @@ handle-thing@^1.2.5:
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
   integrity sha1-/Xqtcmvxpf0W38KbL3pmAdJxOcQ=
 
-hapi@17.7.0:
-  version "17.7.0"
-  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.7.0.tgz#7d335e161fcfef5cc7f2a0aa090ccf9169f9382a"
-  integrity sha512-I34AQyIVO4kTpjkC6pyAq4yaeUcIuCxt6QOEh5QjD6K1yGLTMSGE4muNxp0qR9FTW7ARJ/Innwf/48MiMlOxcw==
+hapi@17.8.1:
+  version "17.8.1"
+  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.8.1.tgz#63cc5bbc138b6ae0919e977764647a17556e4c87"
+  integrity sha512-0zfkl8YtJPfkOG+1KwFnZOk7/mmO2LrExJLWIJwzmwsyxLcQXNrnfwgk205xxxg9tnOO6OdCTQLkPG8Wn+McXw==
   dependencies:
     accept "3.x.x"
     ammo "3.x.x"
