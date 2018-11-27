@@ -19,10 +19,9 @@ class OrderedList extends React.Component<{}, State> {
   }
 
   async componentDidMount() {
-    const newState = {
+    this.setState({
       animals: await this.getAnimals()
-    };
-    this.setState((prevState) => ({...prevState, ...newState}));
+    });
   }
 
   render() {
