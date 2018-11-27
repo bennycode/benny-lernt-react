@@ -4,43 +4,34 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-interface Props {
-  items: string[]
-}
-
 interface State {
-  items: string[]
+  animals: string[]
 }
 
-class OrderedList extends React.Component<Props, State> {
-  static defaultProps = {
-    items: []
+class OrderedList extends React.Component<{}, State> {
+  state = {
+    animals: []
   };
 
-  constructor(props: { items: string[] }) {
-    super(props);
-    this.state = {
-      items: props.items
-    };
+  private async getAnimals(): Promise<string[]> {
+    const response = await axios.get('/rest/animals');
+    return response.data;
   }
 
   async componentDidMount() {
-    const response = await axios.get('/rest/animals');
-    const newItems = {
-      items: response.data
+    const newState = {
+      animals: await this.getAnimals()
     };
-    this.setState((prevState) => {
-      return {...prevState, ...newItems};
-    });
+    this.setState((prevState) => ({...prevState, ...newState}));
   }
 
   render() {
     return (
       <List dense={false}>
-        {this.state.items.map((item, index) =>
+        {this.state.animals.map((animalName, index) =>
           <ListItem key={index}>
             <ListItemText
-              primary={item}
+              primary={animalName}
             />
           </ListItem>)
         }
