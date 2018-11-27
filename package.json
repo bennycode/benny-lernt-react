@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@material-ui/core": "3.6.0",
     "@types/hapi": "17.6.4",
     "@types/inert": "5.1.2",
     "@types/react": "16.7.7",
