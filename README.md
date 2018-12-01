@@ -1,4 +1,6 @@
-# benny-lernt-react
+# Full Stack JavaScript Starter
+
+Setup for a Full Stack JavaScript build pipeline that helps you developing a frontend together with a backend and a database. Including automatic code recompilation and production deployment.
 
 ## Highlights
 - Static type-checking (TypeScript)
@@ -8,3 +10,4 @@
 - Incremental compilation for faster builds (gulp-typescript)
 - Sourcemap support (gulp-sourcemaps)
 - Single interface log system with multiple transports (logdown)
+- Automatic code change detection in development (gulp.watch, nodemon, webpack-dev-server)
