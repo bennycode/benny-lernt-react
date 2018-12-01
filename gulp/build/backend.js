@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const gutil = require('../gulp-util');
 const path = require('path');
+const sourcemaps = require('gulp-sourcemaps');
 const ts = require('gulp-typescript');
 
 module.exports = (specificConfig = 'tsconfig.backend.json') => {
@@ -13,6 +14,8 @@ module.exports = (specificConfig = 'tsconfig.backend.json') => {
   const tsProject = ts.createProject(specificConfigPath);
   return tsProject
     .src()
+    .pipe(sourcemaps.init())
     .pipe(tsProject())
-    .js.pipe(gulp.dest(extendedConfig.compilerOptions.outDir));
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(extendedConfig.compilerOptions.outDir));
 };
