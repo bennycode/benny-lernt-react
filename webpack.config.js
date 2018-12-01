@@ -16,7 +16,8 @@ module.exports = {
     proxy: [{
       context: ['/rest'],
       target: 'http://localhost:3000',
-    }]
+    }],
+    stats: 'errors-only'
   },
   entry: {
     [process.env.npm_package_name]: path.resolve(src, 'index.tsx'),

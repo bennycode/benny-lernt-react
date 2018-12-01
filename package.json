@@ -43,7 +43,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "yarn clean && yarn dist:backend && concurrently \"yarn watch:backend\" \"nodemon\" \"yarn watch:frontend\"",
+    "dev": "yarn clean && yarn dist:backend && concurrently \"yarn watch:backend\" \"nodemon ./dist/index.js\" \"yarn watch:frontend\"",
     "dev:backend": "yarn dist:backend && concurrently \"yarn watch:backend\" \"cross-env NODE_DEBUG=prefix:* NODE_ENV=development nodemon\"",
     "dist": "yarn clean && yarn dist:backend && yarn dist:frontend",
     "dist:backend": "gulp build:backend",
