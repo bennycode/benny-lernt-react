@@ -9,9 +9,10 @@ module.exports = {
   devServer: {
     open: true,
     port: 8080,
-    proxy: {
-      '/rest': 'http://localhost:3000',
-    },
+    proxy: [{
+      context: ['/rest'],
+      target: 'http://localhost:3000',
+    }],
   },
   entry: {
     [process.env.npm_package_name]: path.resolve(src, 'index.tsx'),
