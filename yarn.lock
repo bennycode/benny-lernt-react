@@ -334,10 +334,10 @@
   resolved "https://registry.yarnpkg.com/@types/catbox/-/catbox-10.0.3.tgz#6cbf87ddd35108b8d3945b0838794de8488a1cae"
   integrity sha512-f77b7+fhDLVD9d0dbprmCcAJ7wxipuQwN+8UNws33ZDlf+7G7NDgaBnrPUfXF9DGsfKQWdlzU3ZPLIrNEzqBqA==
 
-"@types/hapi@*", "@types/hapi@17.6.4":
-  version "17.6.4"
-  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-17.6.4.tgz#ef42e7002ea8747c798c9f6132f3f131ce5d6617"
-  integrity sha512-+VNxj5and0spaxmHglNGEDjZrpgvEkzSdMtvwSbEz9Pim5gBsb9Jw7LVRaHP0pEhF5ootAXeBqjQe1FjVK0JGw==
+"@types/hapi@*", "@types/hapi@17.8.0":
+  version "17.8.0"
+  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-17.8.0.tgz#e1264613f4111aa1d74da8bea6a63b286a504ac5"
+  integrity sha512-hI713RUrMY4dn4Q1exYDg4RFYpWwgH5TLROsDFcH8j03mUqCJaorosq7OBegHFSZu0MC/W2fVqKCZ0JwT+nQ2A==
   dependencies:
     "@types/boom" "*"
     "@types/catbox" "*"
