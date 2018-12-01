@@ -51,7 +51,7 @@
     "start": "yarn dist && cross-env NODE_DEBUG=prefix:* NODE_ENV=production node dist/index.js",
     "start:dev": "gulp start:dev",
     "test": "yarn dist && exit 0",
-    "watch:backend": "tsc -w -p tsconfig.backend.json",
+    "watch:backend": "gulp watch:backend",
     "watch:frontend": "webpack-dev-server"
   },
   "version": "1.0.0"
