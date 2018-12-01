@@ -11,3 +11,5 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 - Sourcemap support (gulp-sourcemaps)
 - Single interface log system with multiple transports (logdown)
 - Automatic code change detection in development (gulp.watch, nodemon, webpack-dev-server)
+- Behavior-driven development framework for testing (jasmine)
+- High-level abstraction for testing HTTP calls (supertest)
