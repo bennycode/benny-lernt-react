@@ -8,11 +8,15 @@ const src = path.resolve(__dirname, 'src', 'main', 'frontend');
 module.exports = {
   devServer: {
     open: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
     port: 8080,
     proxy: [{
       context: ['/rest'],
       target: 'http://localhost:3000',
-    }],
+    }]
   },
   entry: {
     [process.env.npm_package_name]: path.resolve(src, 'index.tsx'),
