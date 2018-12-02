@@ -19,6 +19,7 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 - Incremental page reloads in development mode when frontend code changes ([HMR][12])
 - Consistent coding styles between different editors ([EditorConfig](https://editorconfig.org/))
 - Support for Continuous Integration ([Travis CI][15])
+- Browsable API documentation generator ([hapi-swagger][17])
 
 [1]: https://www.typescriptlang.org/
 [2]: https://gulpjs.com/
@@ -36,3 +37,4 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 [14]: https://editorconfig.org/
 [15]: https://travis-ci.org/
 [16]: https://babeljs.io/
+[17]: https://github.com/glennjones/hapi-swagger

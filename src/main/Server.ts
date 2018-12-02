@@ -1,7 +1,8 @@
 import * as Hapi from 'hapi';
 import * as Inert from 'inert';
-import * as logdown from "logdown";
+import * as logdown from 'logdown';
 import * as path from 'path';
+import * as Vision from 'vision';
 
 class Server {
   private readonly logger = logdown('prefix:Server', {
@@ -17,7 +18,18 @@ class Server {
     return server.register([
       {
         plugin: Inert,
-      }
+      },
+      {
+        plugin: Vision,
+      },
+      {
+        plugin: require('hapi-swagger'),
+        options: {
+          info: {
+            title: 'API Documentation'
+          }
+        },
+      },
     ]);
   }
 
@@ -37,9 +49,12 @@ class Server {
       {
         method: 'GET',
         path: '/rest/animals',
-        handler: () => {
-          return ['Alligator', 'Bat', 'Chicken', 'Dolphin', 'Eagle', 'Flamingo', 'Guppy', 'Hedgehog', 'Iguana', 'Jaguar', 'Koala', 'Lion', 'Monkey', 'Narwhal', 'Owl', 'Peacock', 'Queen Bee', 'Rat', 'Sheep', 'Turtle', 'Unicorn', 'Vulture', 'Whale', 'Xantus', 'Yorkshire Terrier', 'Zebra'];
-        }
+        options: {
+          handler: () => {
+            return ['Alligator', 'Bat', 'Chicken', 'Dolphin', 'Eagle', 'Flamingo', 'Guppy', 'Hedgehog', 'Iguana', 'Jaguar', 'Koala', 'Lion', 'Monkey', 'Narwhal', 'Owl', 'Peacock', 'Queen Bee', 'Rat', 'Sheep', 'Turtle', 'Unicorn', 'Vulture', 'Whale', 'Xantus', 'Yorkshire Terrier', 'Zebra'];
+          },
+          tags: ['api']
+        },
       }
     ]);
   }

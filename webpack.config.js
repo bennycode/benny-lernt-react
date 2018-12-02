@@ -15,7 +15,7 @@ module.exports = {
     },
     port: 8080,
     proxy: [{
-      context: ['/rest'],
+      context: ['/documentation', '/rest', '/swaggerui', '/swagger.json'],
       target: 'http://localhost:3000',
     }],
     stats: 'errors-only',
