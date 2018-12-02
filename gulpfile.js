@@ -16,7 +16,7 @@ gulp.task('clean:dist', async () => {
   await fs.remove(path.join(__dirname, 'dist'));
 });
 
-gulp.task('start:dev', async done => {
+gulp.task('start:dev', done => {
   setupEnvironment({
     NODE_ENV: 'development',
   });
