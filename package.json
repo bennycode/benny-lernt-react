@@ -58,7 +58,7 @@
     "dist:frontend": "webpack --mode production",
     "start": "yarn dist && cross-env NODE_DEBUG=prefix:* NODE_ENV=production node dist/index.js",
     "start:dev": "gulp start:dev",
-    "test": "yarn dist && exit 0",
+    "test": "yarn test:backend",
     "test:backend": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "watch:backend": "gulp watch:backend",
     "watch:frontend": "webpack-dev-server"
