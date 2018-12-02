@@ -5,7 +5,7 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 ## Highlights
 - Compatible with macOS, Linux & Windows ([cross-env][13])
 - Static type-checking ([TypeScript][1])
-- Latest ECMAScript features ([TypeScript][1])
+- Latest ECMAScript features ([Babel][16])
 - Automated development tasks ([gulp][2])
 - Automated environment handling for development & production ([gulp][2], [dotenv][3])
 - Incremental compilation for faster builds ([gulp-typescript][4])
@@ -18,6 +18,7 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 - Full page reloads in development mode when backend code changes that affects the frontend ([devServer.contentBase][11])
 - Incremental page reloads in development mode when frontend code changes ([HMR][12])
 - Consistent coding styles between different editors ([EditorConfig](https://editorconfig.org/))
+- Support for Continuous Integration ([Travis CI][15])
 
 [1]: https://www.typescriptlang.org/
 [2]: https://gulpjs.com/
@@ -33,3 +34,5 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 [12]: https://webpack.js.org/concepts/hot-module-replacement/
 [13]: https://github.com/kentcdodds/cross-env
 [14]: https://editorconfig.org/
+[15]: https://travis-ci.org/
+[16]: https://babeljs.io/
