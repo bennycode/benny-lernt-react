@@ -7,6 +7,7 @@ const src = path.resolve(__dirname, 'src', 'main', 'frontend');
 
 module.exports = {
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
     open: true,
     overlay: {
       warnings: true,
@@ -17,7 +18,8 @@ module.exports = {
       context: ['/rest'],
       target: 'http://localhost:3000',
     }],
-    stats: 'errors-only'
+    stats: 'errors-only',
+    watchContentBase: true
   },
   entry: {
     [process.env.npm_package_name]: path.resolve(src, 'index.tsx'),
