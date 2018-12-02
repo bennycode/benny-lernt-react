@@ -2,8 +2,6 @@ import Server from './Server';
 import * as http from "http";
 import request = require('supertest');
 
-const failOnError = (error: Error) => (error ? fail(error) : undefined);
-
 describe('Server', () => {
   describe('Routing', () => {
     let server: Server;
@@ -21,16 +19,28 @@ describe('Server', () => {
       }
     });
 
-    it('serves a root site', async () => {
+    it('serves a root site', (done) => {
       request(listener)
         .get('/')
-        .expect(200, failOnError);
+        .expect(200, (error) => {
+          if (error) {
+            done.fail(error);
+          } else {
+            done();
+          }
+        });
     });
 
-    it('serves an API documentation', async () => {
+    it('serves an API documentation', (done) => {
       request(listener)
         .get('/documentation')
-        .expect(200, failOnError);
+        .expect(200, (error) => {
+          if (error) {
+            done.fail(error);
+          } else {
+            done();
+          }
+        });
     });
   });
 });
