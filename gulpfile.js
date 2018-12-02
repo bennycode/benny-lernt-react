@@ -1,8 +1,20 @@
+const fs = require('fs-extra');
 const gulp = require('gulp');
+const path = require('path');
 const setupEnvironment = require('./gulp/setupEnvironment');
 const webpackConfig = require('./webpack.config');
 
-gulp.task('build:backend', () => (require('./gulp/build/backend')()));
+gulp.task('build:backend', () => {
+  require('./gulp/build/backend')();
+});
+
+gulp.task('build:frontend', (done) => {
+  require('./gulp/build/frontend')(webpackConfig, done);
+});
+
+gulp.task('clean:dist', async () => {
+  await fs.remove(path.join(__dirname, 'dist'));
+});
 
 gulp.task('start:dev', async done => {
   setupEnvironment({
@@ -17,4 +29,6 @@ gulp.task('watch:backend', () => {
   gulp.watch(`${backendSources}/**/*.ts`, gulp.series('build:backend'));
 });
 
-gulp.task('watch:frontend', () => (require('./gulp/watch/frontend')(webpackConfig)));
+gulp.task('watch:frontend', () => {
+  require('./gulp/watch/frontend')(webpackConfig);
+});
