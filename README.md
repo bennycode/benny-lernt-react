@@ -17,6 +17,7 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 - Server restarts in development mode when backend code changes ([nodemon][7])
 - Full page reloads in development mode when backend code changes that affects the frontend ([devServer.contentBase][11])
 - Incremental page reloads in development mode when frontend code changes ([HMR][12])
+- Consistent coding styles between different editors ([EditorConfig](https://editorconfig.org/))
 
 [1]: https://www.typescriptlang.org/
 [2]: https://gulpjs.com/
@@ -31,3 +32,4 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 [11]: https://webpack.js.org/configuration/dev-server/#devserver-contentbase
 [12]: https://webpack.js.org/concepts/hot-module-replacement/
 [13]: https://github.com/kentcdodds/cross-env
+[14]: https://editorconfig.org/
