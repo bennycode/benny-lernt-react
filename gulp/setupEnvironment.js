@@ -7,9 +7,12 @@ const path = require('path');
 
 function setupEnvironment(overrides) {
   const defaults = {
+    // https://github.com/chalk/chalk/issues/195#issuecomment-323018933
     FORCE_COLOR: 1,
-    NODE_ENV: process.env.NODE_ENV,
-    NTBA_FIX_319: 1,
+    // https://github.com/caiogondim/logdown.js/tree/v3.2.7#usage
+    NODE_DEBUG: 'prefix:*',
+    // https://stackoverflow.com/a/16979503/451634
+    NODE_ENV: process.env.NODE_ENV
   };
 
   const config = {...defaults, ...overrides};
