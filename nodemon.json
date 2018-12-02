@@ -1,4 +1,6 @@
 {
   "delay": "100",
-  "verbose": false
+  "script": "dist/index.js",
+  "verbose": false,
+  "watch": "dist"
 }
