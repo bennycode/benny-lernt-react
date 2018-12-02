@@ -9,7 +9,7 @@ Setup for a Full Stack JavaScript build pipeline that helps you developing a fro
 - Automated development tasks ([gulp][2])
 - Automated environment handling for development & production ([gulp][2], [dotenv][3])
 - Incremental compilation for faster builds ([gulp-typescript][4])
-- Sourcemap support ([gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps))
+- Source map support ([gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps))
 - Single interface log system with multiple transports ([logdown][5])
 - Automatic code change detection in development ([gulp.watch][6], [nodemon][7], [webpack-dev-server][8])
 - Behavior-driven development framework for testing ([jasmine][9])
