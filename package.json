@@ -61,7 +61,7 @@
     "test": "yarn test:backend",
     "test:backend": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "watch:backend": "gulp watch:backend",
-    "watch:frontend": "webpack-dev-server"
+    "watch:frontend": "gulp watch:frontend"
   },
   "version": "1.0.0"
 }

@@ -1,9 +1,8 @@
 const gulp = require('gulp');
 const setupEnvironment = require('./gulp/setupEnvironment');
+const webpackConfig = require('./webpack.config');
 
-gulp.task('build:backend', () => {
-  return require('./gulp/build/backend')();
-});
+gulp.task('build:backend', () => (require('./gulp/build/backend')()));
 
 gulp.task('start:dev', async done => {
   setupEnvironment({
@@ -17,3 +16,5 @@ gulp.task('watch:backend', () => {
   const backendSources = tsConfigBackend.compilerOptions.rootDir;
   gulp.watch(`${backendSources}/**/*.ts`, gulp.series('build:backend'));
 });
+
+gulp.task('watch:frontend', () => (require('./gulp/watch/frontend')(webpackConfig)));
