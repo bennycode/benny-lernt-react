@@ -9,7 +9,7 @@ module.exports = (jasmineConfigFilePath, done) => {
 
   // @see https://github.com/gulpjs/gulp/issues/2164#issuecomment-443540389
   jasmine.configureDefaultReporter({
-    onComplete: function (passed) {
+    onComplete: passed => {
       if (passed) {
         exit(0);
       } else {
