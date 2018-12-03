@@ -3,6 +3,7 @@ import axios from 'axios';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import {Animal} from '../../entity/Animal';
 
 interface State {
   animals: string[]
@@ -13,14 +14,15 @@ class OrderedList extends React.Component<{}, State> {
     animals: []
   };
 
-  private async getAnimals(): Promise<string[]> {
+  private async getAnimals(): Promise<Animal[]> {
     const response = await axios.get('/rest/animals');
     return response.data;
   }
 
   async componentDidMount() {
+    const animals = await this.getAnimals();
     this.setState({
-      animals: await this.getAnimals()
+      animals: animals.map((animal) => animal.name)
     });
   }
 

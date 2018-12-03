@@ -48,6 +48,22 @@ class Server {
         }
       },
       {
+        method: 'POST',
+        path: '/rest/animals',
+        options: {
+          handler: async (request) => {
+            const {name} = request.payload as {name: string};
+            return AnimalService.save(name);
+          },
+          tags: ['api'],
+          validate: {
+            payload: {
+              name: Joi.string().required(),
+            },
+          },
+        },
+      },
+      {
         method: 'GET',
         path: '/rest/animals',
         options: {

@@ -20,9 +20,8 @@ Setup for a full stack TypeScript build pipeline that helps you developing a fro
 1. Consistent coding styles between different editors ([EditorConfig](https://editorconfig.org/))
 1. Support for Continuous Integration ([Travis CI][15])
 1. Browsable API documentation generator ([hapi-swagger][17])
-1. Object-relational mapping for various database types ([TypeORM](18))
-1. Database migrations and automatic migrations generation ([TypeORM](18))
-1. Database seeding for development use ([TypeORM](18))
+1. Object-relational mapping ([TypeORM](18))
+1. Database migrations generation ([TypeORM](18))
 
 [1]: https://www.typescriptlang.org/
 [2]: https://gulpjs.com/

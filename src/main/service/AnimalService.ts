@@ -11,6 +11,12 @@ class AnimalService {
     const animalRepository = getManager().getRepository(Animal);
     return animalRepository.findOne(id);
   }
+
+  public static save(name: string): Promise<Animal> {
+    const postRepository = getManager().getRepository(Animal);
+    const animal = postRepository.create({name});
+    return postRepository.save(animal);
+  }
 }
 
 export default AnimalService;
