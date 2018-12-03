@@ -5,7 +5,7 @@ const ConnectionOptions = {
     subscribersDir: 'src/subscriber',
   },
   database: 'database/development.db3',
-  entities: ['src/main/entity/*.ts'],
+  entities: ['dist/entity/*.js'],
   logging: false,
   migrations: ['src/migration/**/*.ts'],
   subscribers: ['src/subscriber/**/*.ts'],
