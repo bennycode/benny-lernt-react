@@ -1,4 +1,4 @@
-import {createConnection, getManager} from 'typeorm';
+import {createConnection} from 'typeorm';
 import * as Boom from 'boom';
 import * as Hapi from 'hapi';
 import * as Inert from 'inert';
@@ -6,7 +6,7 @@ import * as Joi from 'joi';
 import * as logdown from 'logdown';
 import * as path from 'path';
 import * as Vision from 'vision';
-import {Animal} from './entity/Animal';
+import AnimalService from "./service/AnimalService";
 
 class Server {
   private readonly logger = logdown('prefix:Server', {
@@ -14,9 +14,6 @@ class Server {
     markdown: false,
   });
   private server: Hapi.Server | undefined;
-
-  constructor() {
-  }
 
   private initPlugins(server: Hapi.Server): Promise<void> {
     return server.register([
@@ -44,9 +41,9 @@ class Server {
         path: '/{param*}',
         handler: {
           directory: {
+            index: true,
             path: '.',
             redirectToSlash: true,
-            index: true,
           }
         }
       },
@@ -54,8 +51,8 @@ class Server {
         method: 'GET',
         path: '/rest/animals',
         options: {
-          handler: () => {
-            return ['Alligator', 'Bat', 'Chicken', 'Dolphin', 'Eagle', 'Flamingo', 'Guppy', 'Hedgehog', 'Iguana', 'Jaguar', 'Koala', 'Lion', 'Monkey', 'Narwhal', 'Owl', 'Peacock', 'Queen Bee', 'Rat', 'Sheep', 'Turtle', 'Unicorn', 'Vulture', 'Whale', 'Xantus', 'Yorkshire Terrier', 'Zebra'];
+          handler: async () => {
+            return AnimalService.getAll();
           },
           tags: ['api']
         },
@@ -64,16 +61,11 @@ class Server {
         method: 'GET',
         path: '/rest/animals/{id}',
         options: {
-          handler: async function animalGetByIdAction(request) {
-            const animalRepository = getManager().getRepository(Animal);
-            const animal = await animalRepository.findOne(request.params.id);
-
-            if (!animal) {
-              return Boom.notFound();
-            }
-
-            return animal;
+          handler: async (request) => {
+            const animal = await AnimalService.getById(parseInt(request.params.id, 10));
+            return (animal) ? animal : Boom.notFound();
           },
+          tags: ['api'],
           validate: {
             params: {
               id: Joi.number().required(),
