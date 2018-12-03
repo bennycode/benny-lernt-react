@@ -1,4 +1,3 @@
-import {createConnection} from 'typeorm';
 import * as Boom from 'boom';
 import * as Hapi from 'hapi';
 import * as Inert from 'inert';
@@ -52,7 +51,7 @@ class Server {
         path: '/rest/animals',
         options: {
           handler: async (request) => {
-            const {name} = request.payload as {name: string};
+            const {name} = request.payload as { name: string };
             return AnimalService.save(name);
           },
           tags: ['api'],
@@ -93,7 +92,6 @@ class Server {
   }
 
   async start(port: number = 3000): Promise<void> {
-    await createConnection();
     this.server = new Hapi.Server({
       port,
       routes: {

@@ -1,4 +1,8 @@
+import {createConnection} from 'typeorm';
 import Server from './Server';
 
-const server = new Server();
-server.start();
+(async () => {
+  await createConnection();
+  const server = new Server();
+  server.start();
+})();
