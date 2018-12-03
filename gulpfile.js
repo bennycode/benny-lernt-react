@@ -1,7 +1,8 @@
 const fs = require('fs-extra');
 const gulp = require('gulp');
-const nodemonConfig = require('./nodemon');
 const path = require('path');
+
+const nodemonConfig = require('./nodemon');
 const setupEnvironment = require('./gulp/setupEnvironment');
 const webpackConfig = require('./webpack.config');
 
@@ -57,3 +58,10 @@ gulp.task('dev', async done => {
 
   gulp.series('build:backend', gulp.parallel('start:backend', 'watch:backend', 'watch:frontend'))(done);
 });
+
+gulp.task('test:backend', async (done) => {
+  const config = path.join(__dirname, 'jasmine.json');
+  return require('./gulp/test/backend')(config, done);
+});
+
+gulp.task('test', gulp.series('test:backend'));
