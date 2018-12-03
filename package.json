@@ -52,8 +52,7 @@
   "scripts": {
     "dev": "gulp dev",
     "start": "gulp start",
-    "test": "yarn test:backend",
-    "test:backend": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json"
+    "test": "gulp test"
   },
   "version": "1.0.0"
 }

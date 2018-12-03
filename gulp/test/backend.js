@@ -2,11 +2,12 @@ require('ts-node').register();
 
 const Jasmine = require('jasmine');
 
-// TODO: This function is still under construction!
-// @see https://github.com/svi3c/jasmine-ts/blob/v0.0.3/index.js
-module.exports = (jasmineConfigFilePath) => {
+module.exports = (jasmineConfigFilePath, done) => {
   const jasmine = new Jasmine({projectBaseDir: process.cwd()});
+
   jasmine.loadConfigFile(jasmineConfigFilePath);
+
+  // @see https://github.com/gulpjs/gulp/issues/2164#issuecomment-443540389
   jasmine.configureDefaultReporter({
     onComplete: function (passed) {
       if (passed) {
@@ -16,6 +17,14 @@ module.exports = (jasmineConfigFilePath) => {
       }
     },
     showColors: true,
+  });
+
+  jasmine.onComplete(passed => {
+    if (passed) {
+      done();
+    } else {
+      process.exit(-1);
+    }
   });
 
   jasmine.execute();
