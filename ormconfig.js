@@ -4,7 +4,6 @@ const ConnectionOptions = {
     migrationsDir: 'src/migration',
     subscribersDir: 'src/subscriber',
   },
-  database: 'database/development.db3',
   entities: ['dist/entity/*.js'],
   logging: false,
   migrations: ['src/migration/**/*.ts'],
@@ -14,11 +13,11 @@ const ConnectionOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  ConnectionOptions.database = 'database/production.db3';
-}
-
-if (process.env.NODE_ENV === 'test') {
-  ConnectionOptions.database = 'database/test.db3';
+  ConnectionOptions.database = `database/prod-${process.env.npm_package_name}.db3`;
+} else if (process.env.NODE_ENV === 'test') {
+  ConnectionOptions.database = `database/test-${process.env.npm_package_name}.db3`;
+} else {
+  ConnectionOptions.database = `database/dev-${process.env.npm_package_name}.db3`;
 }
 
 module.exports = ConnectionOptions;
