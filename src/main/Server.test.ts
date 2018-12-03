@@ -34,7 +34,7 @@ describe('Server', () => {
     it('serves an API documentation', (done) => {
       request(listener)
         .get('/documentation')
-        .expect(220, (error) => {
+        .expect(200, (error) => {
           if (error) {
             done.fail(error);
           } else {
