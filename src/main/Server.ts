@@ -6,7 +6,7 @@ import * as Joi from 'joi';
 import * as logdown from 'logdown';
 import * as path from 'path';
 import * as Vision from 'vision';
-import AnimalService from "./service/AnimalService";
+import AnimalService from './service/AnimalService';
 
 class Server {
   private readonly logger = logdown('prefix:Server', {

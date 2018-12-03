@@ -1,5 +1,5 @@
-import {getManager} from "typeorm";
-import {Animal} from "../entity/Animal";
+import {getManager} from 'typeorm';
+import {Animal} from '../entity/Animal';
 
 class AnimalService {
   public static getAll(): Promise<Animal[]> {
