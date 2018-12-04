@@ -1,11 +1,10 @@
-import * as Boom from 'boom';
 import * as Hapi from 'hapi';
 import * as Inert from 'inert';
 import * as Joi from 'joi';
 import * as logdown from 'logdown';
 import * as path from 'path';
 import * as Vision from 'vision';
-import AnimalService from './service/AnimalService';
+import AnimalController from './animal/AnimalController';
 
 class Server {
   private readonly logger = logdown('prefix:Server', {
@@ -50,10 +49,7 @@ class Server {
         method: 'POST',
         path: '/rest/animals',
         options: {
-          handler: async (request) => {
-            const {name} = request.payload as { name: string };
-            return AnimalService.save(name);
-          },
+          handler: AnimalController.post,
           tags: ['api'],
           validate: {
             payload: {
@@ -66,9 +62,7 @@ class Server {
         method: 'GET',
         path: '/rest/animals',
         options: {
-          handler: async () => {
-            return AnimalService.getAll();
-          },
+          handler: AnimalController.get,
           tags: ['api']
         },
       },
@@ -76,10 +70,7 @@ class Server {
         method: 'GET',
         path: '/rest/animals/{id}',
         options: {
-          handler: async (request) => {
-            const animal = await AnimalService.getById(parseInt(request.params.id, 10));
-            return (animal) ? animal : Boom.notFound();
-          },
+          handler: AnimalController.getById,
           tags: ['api'],
           validate: {
             params: {

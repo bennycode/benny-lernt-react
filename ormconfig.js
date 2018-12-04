@@ -7,7 +7,7 @@ const ConnectionOptions = {
     migrationsDir: path.join(dir.src, 'migration'),
     subscribersDir: path.join(dir.src, 'subscriber'),
   },
-  entities: [path.join(dir.dist, 'entity', '**/*.js')],
+  entities: [path.join(dir.dist, '**/*Entity.js')],
   logging: false,
   migrations: [path.join(dir.src, 'migration', '**/*.ts')],
   subscribers: [path.join(dir.src, 'subscriber', '**/*.ts')],
