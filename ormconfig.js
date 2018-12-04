@@ -13,11 +13,11 @@ const ConnectionOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  ConnectionOptions.database = `database/prod-${process.env.npm_package_name}.db3`;
+  ConnectionOptions.database = `data/prod-${process.env.npm_package_name}.db3`;
 } else if (process.env.NODE_ENV === 'test') {
-  ConnectionOptions.database = `database/test-${process.env.npm_package_name}.db3`;
+  ConnectionOptions.database = `data/test-${process.env.npm_package_name}.db3`;
 } else {
-  ConnectionOptions.database = `database/dev-${process.env.npm_package_name}.db3`;
+  ConnectionOptions.database = `data/dev-${process.env.npm_package_name}.db3`;
 }
 
 module.exports = ConnectionOptions;

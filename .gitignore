@@ -2,7 +2,7 @@
 .env
 .Icon
 .idea
-/database
+/data
 /dist
 /nbproject
 /node_modules
