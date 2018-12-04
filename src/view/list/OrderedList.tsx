@@ -1,9 +1,8 @@
 import * as React from 'react';
-import axios from 'axios';
+import AnimalResource from '../../animal/AnimalResource';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import AnimalEntity from '../../animal/AnimalEntity';
 
 interface State {
   animals: string[]
@@ -14,13 +13,8 @@ class OrderedList extends React.Component<{}, State> {
     animals: []
   };
 
-  private async getAnimals(): Promise<AnimalEntity[]> {
-    const response = await axios.get('/rest/animals');
-    return response.data;
-  }
-
   async componentDidMount() {
-    const animals = await this.getAnimals();
+    const animals = await AnimalResource.getAnimals();
     this.setState({
       animals: animals.map((animal) => animal.name)
     });
@@ -42,5 +36,3 @@ class OrderedList extends React.Component<{}, State> {
 }
 
 export default OrderedList;
-
-
