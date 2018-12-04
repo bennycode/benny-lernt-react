@@ -1,10 +1,9 @@
 import * as Hapi from 'hapi';
 import * as Inert from 'inert';
-import * as Joi from 'joi';
 import * as logdown from 'logdown';
 import * as path from 'path';
 import * as Vision from 'vision';
-import AnimalController from './animal/AnimalController';
+import {AnimalRoute} from './animal/AnimalRoute';
 
 class Server {
   private readonly logger = logdown('prefix:Server', {
@@ -45,40 +44,7 @@ class Server {
           }
         }
       },
-      {
-        method: 'POST',
-        path: '/rest/animals',
-        options: {
-          handler: AnimalController.post,
-          tags: ['api'],
-          validate: {
-            payload: {
-              name: Joi.string().required(),
-            },
-          },
-        },
-      },
-      {
-        method: 'GET',
-        path: '/rest/animals',
-        options: {
-          handler: AnimalController.get,
-          tags: ['api']
-        },
-      },
-      {
-        method: 'GET',
-        path: '/rest/animals/{id}',
-        options: {
-          handler: AnimalController.getById,
-          tags: ['api'],
-          validate: {
-            params: {
-              id: Joi.number().required(),
-            },
-          },
-        },
-      }
+      ...AnimalRoute
     ]);
   }
 
