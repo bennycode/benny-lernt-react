@@ -96,7 +96,7 @@ class Server {
       port,
       routes: {
         files: {
-          relativeTo: path.join(__dirname, 'frontend')
+          relativeTo: path.join(__dirname, 'view')
         }
       }
     });
