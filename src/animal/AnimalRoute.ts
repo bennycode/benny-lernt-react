@@ -1,10 +1,11 @@
 import * as Joi from 'joi';
 import AnimalController from './AnimalController';
+import AnimalResource from './AnimalResource';
 
 export const AnimalRoute = [
   {
     method: 'POST',
-    path: '/rest/animals',
+    path: AnimalResource.URL.REST_ANIMALS,
     options: {
       handler: AnimalController.post,
       tags: ['api'],
@@ -17,7 +18,7 @@ export const AnimalRoute = [
   },
   {
     method: 'GET',
-    path: '/rest/animals',
+    path: AnimalResource.URL.REST_ANIMALS,
     options: {
       handler: AnimalController.get,
       tags: ['api']
@@ -25,7 +26,7 @@ export const AnimalRoute = [
   },
   {
     method: 'GET',
-    path: '/rest/animals/{id}',
+    path: `${AnimalResource.URL.REST_ANIMALS}/{id}`,
     options: {
       handler: AnimalController.getById,
       tags: ['api'],
