@@ -1,23 +1,24 @@
+const dir = require('./dir');
+const path = require('path');
+
 const ConnectionOptions = {
   cli: {
-    entitiesDir: 'src/main/entity',
-    migrationsDir: 'src/migration',
-    subscribersDir: 'src/subscriber',
+    entitiesDir: path.join(dir.src, 'entity'),
+    migrationsDir: path.join(dir.src, 'migration'),
+    subscribersDir: path.join(dir.src, 'subscriber'),
   },
-  entities: ['dist/entity/*.js'],
+  entities: [path.join(dir.dist, 'entity', '**/*.js')],
   logging: false,
-  migrations: ['src/migration/**/*.ts'],
-  subscribers: ['src/subscriber/**/*.ts'],
+  migrations: [path.join(dir.src, 'migration', '**/*.ts')],
+  subscribers: [path.join(dir.src, 'subscriber', '**/*.ts')],
   synchronize: true,
   type: 'sqlite',
 };
 
 if (process.env.NODE_ENV === 'production') {
-  ConnectionOptions.database = `data/prod-${process.env.npm_package_name}.db3`;
-} else if (process.env.NODE_ENV === 'test') {
-  ConnectionOptions.database = `data/test-${process.env.npm_package_name}.db3`;
+  ConnectionOptions.database = path.join(dir.data, `prod-${process.env.npm_package_name}.db3`);
 } else {
-  ConnectionOptions.database = `data/dev-${process.env.npm_package_name}.db3`;
+  ConnectionOptions.database = path.join(dir.data, `${process.env.NODE_ENV}-${process.env.npm_package_name}.db3`);
 }
 
 module.exports = ConnectionOptions;
