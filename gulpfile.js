@@ -3,7 +3,6 @@ const gulp = require('gulp');
 
 const setupEnvironment = require('./gulp/setupEnvironment');
 
-const jasminConfig = require('./jasmine');
 const nodemonConfig = require('./nodemon');
 const tsConfig = require('./tsconfig');
 const webpackConfig = require('./webpack.config');
@@ -61,7 +60,8 @@ gulp.task('dev', async done => {
 });
 
 gulp.task('test:backend', (done) => {
-  require('./gulp/test/backend')(jasminConfig, done);
+  const config = path.join(__dirname, 'jasmine.json');
+  require('./gulp/test/backend')(config, done);
 });
 
 gulp.task('test', gulp.series('test:backend'));
