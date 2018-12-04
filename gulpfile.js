@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const gulp = require('gulp');
+const path = require('path');
 
 const setupEnvironment = require('./gulp/setupEnvironment');
 
