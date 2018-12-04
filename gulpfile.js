@@ -1,13 +1,15 @@
 const fs = require('fs-extra');
 const gulp = require('gulp');
-const path = require('path');
 
-const nodemonConfig = require('./nodemon');
 const setupEnvironment = require('./gulp/setupEnvironment');
+
+const jasminConfig = require('./jasmine');
+const nodemonConfig = require('./nodemon');
+const tsConfig = require('./tsconfig');
 const webpackConfig = require('./webpack.config');
 
 gulp.task('clean:dist', async () => {
-  await fs.remove(path.join(__dirname, 'dist'));
+  await fs.remove(dir.dist);
 });
 
 gulp.task('clean', gulp.series('clean:dist'));
@@ -24,8 +26,7 @@ gulp.task('build:frontend', (done) => {
 gulp.task('build', gulp.series('clean', 'build:backend', 'build:frontend'));
 
 gulp.task('watch:backend', async () => {
-  const tsConfigBackend = require('./tsconfig.backend');
-  const backendSources = tsConfigBackend.compilerOptions.rootDir;
+  const backendSources = tsConfig.compilerOptions.rootDir;
   gulp.watch(`${backendSources}/**/*.ts`, gulp.series('build:backend'));
 });
 
@@ -60,8 +61,7 @@ gulp.task('dev', async done => {
 });
 
 gulp.task('test:backend', (done) => {
-  const config = path.join(__dirname, 'jasmine.json');
-  require('./gulp/test/backend')(config, done);
+  require('./gulp/test/backend')(jasminConfig, done);
 });
 
 gulp.task('test', gulp.series('test:backend'));
