@@ -103,7 +103,7 @@ class Server {
     await this.initPlugins(this.server);
     this.initRoutes(this.server);
     await this.server.start();
-    this.logger.info(`Server running at: ${this.server.info.uri}`);
+    this.logger.info(`Server running at "${this.server.info.uri}".`);
   }
 
   async stop(): Promise<boolean> {

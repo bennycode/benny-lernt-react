@@ -1,13 +1,14 @@
+const dir = require('./dir');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const dist = path.join(__dirname, 'dist', 'frontend');
-const src = path.join(__dirname, 'src', 'main', 'frontend');
+const viewDist = path.join(dir.dist, 'frontend');
+const viewSource = path.join(dir.src, 'frontend');
 
 module.exports = {
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: dir.dist,
     host: 'localhost',
     hot: true,
     open: true,
@@ -24,7 +25,7 @@ module.exports = {
     watchContentBase: true
   },
   entry: {
-    [process.env.npm_package_name]: [path.join(src, 'index.tsx')],
+    [process.env.npm_package_name]: [path.join(viewSource, 'index.tsx')],
   },
   mode: 'development',
   module: {
@@ -38,12 +39,12 @@ module.exports = {
   },
   output: {
     filename: `[name].bundle.js`,
-    path: dist,
+    path: viewDist,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(src, 'index.html'),
+      template: path.join(viewSource, 'index.html'),
     })
   ],
   resolve: {
