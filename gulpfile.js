@@ -15,7 +15,7 @@ gulp.task('clean:dist', async () => {
 gulp.task('clean', gulp.series('clean:dist'));
 
 
-gulp.task('build:backend', () => {
+gulp.task('build:backend', async () => {
   return require('./gulp/build/backend')();
 });
 

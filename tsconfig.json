@@ -14,7 +14,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "outDir": "dist",
-    "rootDir": "src/main",
+    "rootDir": "src",
     "sourceMap": true,
     "strict": true,
     "target": "es6"
