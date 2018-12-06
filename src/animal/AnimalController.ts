@@ -14,7 +14,7 @@ class AnimalController {
 
   public static async post(request: Hapi.Request) {
     const {name} = request.payload as { name: string };
-    return (new AnimalService).save(name);
+    return (new AnimalService).save({name});
   }
 }
 
