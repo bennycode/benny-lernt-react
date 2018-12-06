@@ -1,3 +1,4 @@
+const dir = require('./dir');
 const fs = require('fs-extra');
 const gulp = require('gulp');
 const path = require('path');
