@@ -3,14 +3,21 @@ import * as Inert from 'inert';
 import * as logdown from 'logdown';
 import * as path from 'path';
 import * as Vision from 'vision';
-import {AnimalRoute} from './animal/AnimalRoute';
+import AnimalController from './animal/AnimalController';
+import RouteController from './server/RouteController';
 
 class Server {
+  private controllers: RouteController[] = [];
+
   private readonly logger = logdown('prefix:Server', {
     logger: console,
     markdown: false,
   });
   private server: Hapi.Server | undefined;
+
+  constructor() {
+    this.controllers.push(new AnimalController());
+  }
 
   private initPlugins(server: Hapi.Server): Promise<void> {
     return server.register([
@@ -32,7 +39,7 @@ class Server {
   }
 
   private initRoutes(server: Hapi.Server): void {
-    server.route([
+    let routes: Hapi.ServerRoute[] = [
       {
         method: 'GET',
         path: '/{param*}',
@@ -44,8 +51,12 @@ class Server {
           }
         }
       },
-      ...AnimalRoute
-    ]);
+    ];
+
+
+    this.controllers.forEach((controller) => routes = routes.concat(controller.getRoutes()));
+
+    server.route(routes);
   }
 
   async start(port: number = 3000): Promise<void> {
