@@ -1,21 +1,24 @@
-import {getManager} from 'typeorm';
+import {getManager, Repository} from 'typeorm';
 import AnimalEntity from './AnimalEntity';
 
 class AnimalService {
-  public static getAll(): Promise<AnimalEntity[]> {
-    const animalRepository = getManager().getRepository(AnimalEntity);
-    return animalRepository.find();
+  private animalRepository: Repository<AnimalEntity>;
+
+  constructor() {
+    this.animalRepository = getManager().getRepository(AnimalEntity);
   }
 
-  public static getById(id: number): Promise<AnimalEntity | undefined> {
-    const animalRepository = getManager().getRepository(AnimalEntity);
-    return animalRepository.findOne(id);
+  public getAll(): Promise<AnimalEntity[]> {
+    return this.animalRepository.find();
   }
 
-  public static save(name: string): Promise<AnimalEntity> {
-    const postRepository = getManager().getRepository(AnimalEntity);
-    const animal = postRepository.create({name});
-    return postRepository.save(animal);
+  public getById(id: number): Promise<AnimalEntity | undefined> {
+    return this.animalRepository.findOne(id);
+  }
+
+  public save(attributes: Object): Promise<AnimalEntity> {
+    const animal = this.animalRepository.create(attributes);
+    return this.animalRepository.save(animal);
   }
 }
 
