@@ -1,11 +1,12 @@
 import * as React from 'react';
+import AnimalEntity from '../../animal/AnimalEntity';
 import AnimalResource from '../../animal/AnimalResource';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 interface State {
-  animals: string[]
+  animals: AnimalEntity[]
 }
 
 class OrderedList extends React.Component<{}, State> {
@@ -16,17 +17,17 @@ class OrderedList extends React.Component<{}, State> {
   async componentDidMount() {
     const animals = await AnimalResource.getAnimals();
     this.setState({
-      animals: animals.map((animal) => animal.name)
+      animals,
     });
   }
 
   render() {
     return (
       <List dense={false}>
-        {this.state.animals.map((animalName, index) =>
+        {this.state.animals.map((animal: AnimalEntity, index: number) =>
           <ListItem key={index}>
             <ListItemText
-              primary={animalName}
+              primary={animal.name}
             />
           </ListItem>)
         }
