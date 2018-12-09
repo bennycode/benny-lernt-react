@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@material-ui/core": "3.6.1",
+    "@material-ui/icons": "3.0.1",
     "@types/boom": "7.2.1",
     "@types/hapi": "17.8.0",
     "@types/inert": "5.1.2",
@@ -11,6 +12,7 @@
     "axios": "0.18.0",
     "boom": "7.3.0",
     "chalk": "2.4.1",
+    "classnames": "2.2.6",
     "cross-env": "5.2.0",
     "dotenv": "6.2.0",
     "fs-extra": "7.0.1",
