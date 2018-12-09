@@ -1,12 +1,17 @@
 import * as Boom from 'boom';
 import * as Hapi from 'hapi';
 import * as Joi from 'joi';
-import AnimalResource from './AnimalResource';
 import AnimalService from './AnimalService';
 import RouteController from '../server/RouteController';
 import {ServerRoute} from 'hapi';
 
 class AnimalController implements RouteController {
+  static get URL(): {[key: string]: string} {
+    return {
+      REST_ANIMALS: '/rest/animals',
+    };
+  }
+
   public async get() {
     return (new AnimalService).getAll();
   }
@@ -21,11 +26,11 @@ class AnimalController implements RouteController {
     return (new AnimalService).save({name});
   }
 
-  getRoutes(): ServerRoute[] {
+  public getRoutes(): ServerRoute[] {
     return [
       {
         method: 'POST',
-        path: AnimalResource.URL.REST_ANIMALS,
+        path: AnimalController.URL.REST_ANIMALS,
         options: {
           handler: this.post,
           tags: ['api'],
@@ -38,7 +43,7 @@ class AnimalController implements RouteController {
       },
       {
         method: 'GET',
-        path: AnimalResource.URL.REST_ANIMALS,
+        path: AnimalController.URL.REST_ANIMALS,
         options: {
           handler: this.get,
           tags: ['api']
@@ -46,7 +51,7 @@ class AnimalController implements RouteController {
       },
       {
         method: 'GET',
-        path: `${AnimalResource.URL.REST_ANIMALS}/{id}`,
+        path: `${AnimalController.URL.REST_ANIMALS}/{id}`,
         options: {
           handler: this.getById,
           tags: ['api'],
