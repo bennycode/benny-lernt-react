@@ -40,7 +40,6 @@ const styles = ({mixins, palette, spacing}: Theme) => createStyles({
 });
 
 interface Props extends WithStyles<typeof styles> {
-  classes: any
 }
 
 function PermanentDrawerLeft(props: Props) {
