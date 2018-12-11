@@ -43,7 +43,7 @@
     "gulp-typescript": "5.0.0",
     "html-webpack-plugin": "3.2.0",
     "jasmine": "3.3.1",
-    "nodemon": "1.18.7",
+    "nodemon": "1.18.8",
     "plugin-error": "1.0.1",
     "supertest": "3.3.0",
     "ts-node": "7.0.1",
