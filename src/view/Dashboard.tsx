@@ -18,6 +18,7 @@ class Dashboard extends React.Component<Props, State> {
           <a href={'/documentation'} style={{textDecoration: 'none'}} target={'_blank'} rel='noopener'>Create animal</a>
         </Button>
         {this.props.children}
+        <p>{`Running mode: ${process.env.NODE_ENV}`}</p>
       </React.Fragment>
     );
   }
