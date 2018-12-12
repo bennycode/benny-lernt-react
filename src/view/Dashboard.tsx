@@ -37,7 +37,7 @@ const styles = ({mixins, palette, spacing}: Theme) => createStyles({
 interface Props extends WithStyles<typeof styles> {
 }
 
-class PermanentDrawerLeft extends React.Component<Props, {}> {
+class Dashboard extends React.Component<Props, {}> {
   render() {
     const {classes} = this.props;
     return (
@@ -67,10 +67,11 @@ class PermanentDrawerLeft extends React.Component<Props, {}> {
         <main className={classes.content}>
           <div className={classes.toolbar}/>
           {this.props.children}
+          <Typography variant="caption" gutterBottom>Version: x.x.x</Typography>
         </main>
       </div>
     );
   }
 }
 
-export default withStyles(styles)(PermanentDrawerLeft);
+export default withStyles(styles)(Dashboard);

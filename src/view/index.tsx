@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import PermanentDrawerLeft from "./PermanentDrawerLeft";
-import OrderedList from "./list/OrderedList";
+import Dashboard from './Dashboard';
+import OrderedList from './list/OrderedList';
 
 const container = document.getElementById('root');
 const element = (
-  <PermanentDrawerLeft>
+  <Dashboard>
     <OrderedList/>
-  </PermanentDrawerLeft>
+  </Dashboard>
 );
 
 ReactDOM.render(element, container);
