@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@material-ui/core": "3.6.1",
+    "@material-ui/core": "3.6.2",
     "@material-ui/icons": "3.0.1",
     "@types/boom": "7.2.1",
     "@types/hapi": "17.8.0",
@@ -45,7 +45,7 @@
     "gulp-typescript": "5.0.0",
     "html-webpack-plugin": "3.2.0",
     "jasmine": "3.3.1",
-    "nodemon": "1.18.7",
+    "nodemon": "1.18.8",
     "plugin-error": "1.0.1",
     "supertest": "3.3.0",
     "ts-node": "7.0.1",
