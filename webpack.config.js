@@ -42,6 +42,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(dir.srcView, 'index.html'),
+    }),
+    new webpack.EnvironmentPlugin({
+      DEBUG: false,
+      NODE_ENV: 'development'
     })
   ],
   resolve: {

@@ -67,7 +67,7 @@ class Dashboard extends React.Component<Props, {}> {
         <main className={classes.content}>
           <div className={classes.toolbar}/>
           {this.props.children}
-          <Typography variant="caption" gutterBottom>Version: x.x.x</Typography>
+          <Typography variant="caption" gutterBottom>{`Version: ${process.env.NODE_ENV}`}</Typography>
         </main>
       </div>
     );
