@@ -22,7 +22,7 @@ Setup for a full stack TypeScript build pipeline that helps you developing a fro
 1. Browsable API documentation generator ([hapi-swagger][17])
 1. Object-relational mapping ([TypeORM][18])
 1. Database migrations generation ([TypeORM][18])
-1. Frontend styling solution supporting theme nesting, dynamic styles, self-support, etc. ([JSS][19])
+1. Frontend styling solution supporting theme nesting, dynamic styles & self-support ([JSS][19])
 
 [1]: https://www.typescriptlang.org/
 [2]: https://gulpjs.com/
