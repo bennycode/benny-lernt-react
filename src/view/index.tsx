@@ -3,8 +3,11 @@ import * as ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
 import OrderedList from './list/OrderedList';
 
-const root = document.getElementById('root');
-ReactDOM.render(
+const container = document.getElementById('root');
+const element = (
   <Dashboard>
     <OrderedList/>
-  </Dashboard>, root);
+  </Dashboard>
+);
+
+ReactDOM.render(element, container);

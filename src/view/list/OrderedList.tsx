@@ -8,7 +8,7 @@ interface State {
 }
 
 class OrderedList extends React.Component<{}, State> {
-  state = {
+  state: State = {
     animals: []
   };
 
