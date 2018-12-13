@@ -6,7 +6,7 @@
     "@types/hapi": "17.8.0",
     "@types/inert": "5.1.2",
     "@types/joi": "14.0.1",
-    "@types/react": "16.7.13",
+    "@types/react": "16.7.17",
     "@types/react-dom": "16.0.11",
     "@types/vision": "5.3.5",
     "axios": "0.18.0",
