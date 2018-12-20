@@ -21,7 +21,7 @@
     "joi": "14.3.0",
     "logdown": "3.2.7",
     "prop-types": "15.6.2",
-    "react": "16.6.3",
+    "react": "16.7.0",
     "react-dom": "16.6.3",
     "sqlite3": "4.0.4",
     "typeorm": "0.2.9",
