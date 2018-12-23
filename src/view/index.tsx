@@ -6,7 +6,7 @@ import OrderedList from './list/OrderedList';
 const container = document.getElementById('root');
 const element = (
   <Dashboard>
-    <OrderedList/>
+    <OrderedList />
   </Dashboard>
 );
 

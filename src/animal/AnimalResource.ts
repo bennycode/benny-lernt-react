@@ -15,7 +15,7 @@ class AnimalResource {
       url: AnimalResource.URL.REST_ANIMALS,
     };
 
-    return axios.request<AnimalEntity[]>(config).then(function (response: AxiosResponse) {
+    return axios.request<AnimalEntity[]>(config).then(function(response: AxiosResponse) {
       return response.data;
     });
   }

@@ -12,7 +12,7 @@ function setupEnvironment(overrides) {
     // https://github.com/caiogondim/logdown.js/tree/v3.2.7#usage
     NODE_DEBUG: 'prefix:*',
     // https://stackoverflow.com/a/16979503/451634
-    NODE_ENV: process.env.NODE_ENV
+    NODE_ENV: process.env.NODE_ENV,
   };
 
   const config = {...defaults, ...overrides};
@@ -38,4 +38,3 @@ function setupEnvironment(overrides) {
 }
 
 module.exports = setupEnvironment;
-
