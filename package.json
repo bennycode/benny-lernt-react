@@ -64,7 +64,7 @@
       "tslint --config tslint.json --project tsconfig.json --fix",
       "git add"
     ],
-    "*.{js,json,md,scss,yml}": [
+    "*.{js,json,md,yml}": [
       "prettier --write",
       "git add"
     ]
@@ -80,7 +80,7 @@
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.{ts,tsx}\"",
     "lint": "yarn lint:other && yarn lint:ts",
-    "prettier": "prettier \"**/*.{js,json,md,scss,yml}\"",
+    "prettier": "prettier \"**/*.{js,json,md,yml}\"",
     "start": "gulp start",
     "test": "gulp test && yarn lint"
   },
