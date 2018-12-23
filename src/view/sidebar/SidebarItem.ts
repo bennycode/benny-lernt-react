@@ -1,6 +1,6 @@
 interface SidebarItem {
-  icon: JSX.Element
-  text: string
+  icon: JSX.Element;
+  text: string;
 }
 
 export {SidebarItem};

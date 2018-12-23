@@ -1,8 +1,8 @@
-import {getManager, Repository} from 'typeorm';
+import {Repository, getManager} from 'typeorm';
 import AnimalEntity from './AnimalEntity';
 
 class AnimalService {
-  private animalRepository: Repository<AnimalEntity>;
+  private readonly animalRepository: Repository<AnimalEntity>;
 
   constructor() {
     this.animalRepository = getManager().getRepository(AnimalEntity);

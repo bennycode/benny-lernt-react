@@ -3,6 +3,7 @@
 Setup for a full stack TypeScript build pipeline that helps you developing a frontend together with a backend and a database. Including automatic code recompilation and production deployment.
 
 ## Highlights
+
 1. Compatible with macOS, Linux & Windows ([cross-env][13])
 1. Static type-checking ([TypeScript][1])
 1. Latest ECMAScript features ([Babel][16])

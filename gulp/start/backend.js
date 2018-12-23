@@ -3,7 +3,7 @@ const {spawn} = require('child_process');
 
 module.exports = (nodemonConfig, done) => {
   const overrides = {
-    done
+    done,
   };
   const config = {...nodemonConfig, overrides};
 

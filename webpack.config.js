@@ -14,12 +14,14 @@ module.exports = {
       warnings: true,
     },
     port: 8080,
-    proxy: [{
-      context: ['/documentation', '/rest', '/swaggerui', '/swagger.json'],
-      target: 'http://localhost:3000',
-    }],
+    proxy: [
+      {
+        context: ['/documentation', '/rest', '/swaggerui', '/swagger.json'],
+        target: 'http://localhost:3000',
+      },
+    ],
     stats: 'errors-only',
-    watchContentBase: true
+    watchContentBase: true,
   },
   entry: {
     [process.env.npm_package_name]: [path.join(dir.srcView, 'index.tsx')],
@@ -32,7 +34,7 @@ module.exports = {
         loader: 'babel-loader',
         test: /\.tsx?$/,
       },
-    ]
+    ],
   },
   output: {
     filename: `[name].bundle.js`,
@@ -45,8 +47,8 @@ module.exports = {
     }),
     new webpack.EnvironmentPlugin({
       DEBUG: false,
-      NODE_ENV: 'development'
-    })
+      NODE_ENV: 'development',
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],

@@ -1,8 +1,4 @@
 {
-  "exclude": [
-    "dist",
-    "node_modules",
-    "src/view"
-  ],
+  "exclude": ["dist", "node_modules", "src/view"],
   "extends": "./tsconfig.json"
 }

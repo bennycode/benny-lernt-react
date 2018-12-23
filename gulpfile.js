@@ -19,7 +19,7 @@ gulp.task('build:backend', () => {
   return require('./gulp/build/backend')();
 });
 
-gulp.task('build:frontend', (done) => {
+gulp.task('build:frontend', done => {
   require('./gulp/build/frontend')(webpackConfig, done);
 });
 
@@ -60,7 +60,7 @@ gulp.task('dev', async done => {
   gulp.series('build:backend', gulp.parallel('start:backend', 'watch:backend', 'watch:frontend'))(done);
 });
 
-gulp.task('test:backend', (done) => {
+gulp.task('test:backend', done => {
   const config = path.join(__dirname, 'jasmine.json');
   require('./gulp/test/backend')(config, done);
 });

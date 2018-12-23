@@ -7,7 +7,7 @@ import AnimalController from './animal/AnimalController';
 import RouteController from './server/RouteController';
 
 class Server {
-  private controllers: RouteController[] = [];
+  private readonly controllers: RouteController[] = [];
 
   private readonly logger = logdown('prefix:Server', {
     logger: console,
@@ -28,12 +28,12 @@ class Server {
         plugin: Vision,
       },
       {
-        plugin: require('hapi-swagger'),
         options: {
           info: {
-            title: 'API Documentation'
-          }
+            title: 'API Documentation',
+          },
         },
+        plugin: require('hapi-swagger'),
       },
     ]);
   }
@@ -41,20 +41,19 @@ class Server {
   private initRoutes(server: Hapi.Server): void {
     let routes: Hapi.ServerRoute[] = [
       {
-        method: 'GET',
-        path: '/{param*}',
         handler: {
           directory: {
             index: true,
             path: '.',
             redirectToSlash: true,
-          }
-        }
+          },
+        },
+        method: 'GET',
+        path: '/{param*}',
       },
     ];
 
-
-    this.controllers.forEach((controller) => routes = routes.concat(controller.getRoutes()));
+    this.controllers.forEach(controller => (routes = routes.concat(controller.getRoutes())));
 
     server.route(routes);
   }
@@ -64,9 +63,9 @@ class Server {
       port,
       routes: {
         files: {
-          relativeTo: path.join(__dirname, 'view')
-        }
-      }
+          relativeTo: path.join(__dirname, 'view'),
+        },
+      },
     });
     await this.initPlugins(this.server);
     this.initRoutes(this.server);
