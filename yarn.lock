@@ -3203,10 +3203,10 @@ handlebars@^4.0.11:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-hapi-swagger@9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/hapi-swagger/-/hapi-swagger-9.2.0.tgz#2ef84a4392c538747d32805960794b49f8979fee"
-  integrity sha512-9InEv2310Cv+KT4+l+PEdndRZT66bZx9JQhHq9nEwci4g/VrjRIkv8z18VDU0B+nTV623QtaltYEECRfa5S6IA==
+hapi-swagger@9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/hapi-swagger/-/hapi-swagger-9.3.0.tgz#e69e042e63fe1ab520322d5a3eca1fa0fba8fb5e"
+  integrity sha512-jvwqwpiOijGahy1giuE053YL3L1r4UBkJ2mgnHcUOKJnwcKr9rkxgjW9PgxVMCkvYEq6UYqKXg3I3qVxy2Ykhw==
   dependencies:
     boom "^7.1.1"
     handlebars "^4.0.11"

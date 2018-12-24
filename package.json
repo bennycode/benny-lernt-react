@@ -16,7 +16,7 @@
     "dotenv": "6.2.0",
     "fs-extra": "7.0.1",
     "hapi": "17.8.1",
-    "hapi-swagger": "9.2.0",
+    "hapi-swagger": "9.3.0",
     "inert": "5.1.2",
     "joi": "14.3.0",
     "logdown": "3.2.7",
