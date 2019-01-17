@@ -46,7 +46,7 @@
     "jasmine": "3.3.1",
     "nodemon": "1.18.9",
     "plugin-error": "1.0.1",
-    "supertest": "3.3.0",
+    "supertest": "3.4.1",
     "ts-node": "7.0.1",
     "typescript": "3.2.2",
     "webpack": "4.28.4",
