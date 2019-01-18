@@ -48,7 +48,7 @@
     "plugin-error": "1.0.1",
     "supertest": "3.4.1",
     "ts-node": "7.0.1",
-    "typescript": "3.2.2",
+    "typescript": "3.2.4",
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14"
