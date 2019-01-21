@@ -447,10 +447,10 @@
   resolved "https://registry.yarnpkg.com/@types/cookiejar/-/cookiejar-2.1.0.tgz#4b7daf2c51696cfc70b942c11690528229d1a1ce"
   integrity sha512-EIjmpvnHj+T4nMcKwHwxZKUfDmphIKJc2qnEMhSoOvr1lYEQpuRKRz8orWr//krYIIArS/KGGLfL2YGVUYXmIA==
 
-"@types/hapi@*", "@types/hapi@17.8.2":
-  version "17.8.2"
-  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-17.8.2.tgz#667fbeff250c338dca9e6cc1779f5696c7c148ed"
-  integrity sha512-UP+Z+NN5c55hu96j68kx04uIsUWxElc3H2JSoFm4I7ltmOlIqtn/tZIuSVeeRABKz3NWNG6X7wHyL2N+tgm6lA==
+"@types/hapi@*", "@types/hapi@17.8.4":
+  version "17.8.4"
+  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-17.8.4.tgz#d2d879926ddbbf1f5869d1e6782a82826c0fc749"
+  integrity sha512-Qgj+lJ2ShKir9JYzYmfZoXF9ACrkS6ybqcn7eRsHYfrM2snaEJQtAD9VtD1/WoshtjCqTshS+851/XRNgpEHCQ==
   dependencies:
     "@types/boom" "*"
     "@types/catbox" "*"
