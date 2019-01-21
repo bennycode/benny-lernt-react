@@ -3,7 +3,7 @@
     "@material-ui/core": "3.9.0",
     "@material-ui/icons": "3.0.2",
     "@types/boom": "7.2.1",
-    "@types/hapi": "17.8.2",
+    "@types/hapi": "17.8.4",
     "@types/inert": "5.1.2",
     "@types/joi": "14.0.1",
     "@types/react": "16.7.20",
