@@ -3232,10 +3232,10 @@ hapi-swagger@9.3.0:
     json-schema-ref-parser "^4.1.0"
     swagger-parser "4.0.2"
 
-hapi@17.8.1:
-  version "17.8.1"
-  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.8.1.tgz#63cc5bbc138b6ae0919e977764647a17556e4c87"
-  integrity sha512-0zfkl8YtJPfkOG+1KwFnZOk7/mmO2LrExJLWIJwzmwsyxLcQXNrnfwgk205xxxg9tnOO6OdCTQLkPG8Wn+McXw==
+hapi@17.8.3:
+  version "17.8.3"
+  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.8.3.tgz#662795cdbe7ce90c22731a0f38b6a24918b1e5b0"
+  integrity sha512-HH+w5qxtEdnYgwYdeqUbVi7VnWWHl1U2eW6tyu6P681VhJimGYgDBpbcqCjKta61yWS27E1LG8rNLj+0Renj4w==
   dependencies:
     accept "3.x.x"
     ammo "3.x.x"
