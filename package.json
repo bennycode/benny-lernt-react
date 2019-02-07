@@ -22,7 +22,7 @@
     "logdown": "3.2.7",
     "prop-types": "15.6.2",
     "react": "16.7.0",
-    "react-dom": "16.7.0",
+    "react-dom": "16.8.1",
     "sqlite3": "4.0.6",
     "typeorm": "0.2.12",
     "vision": "5.4.4"
