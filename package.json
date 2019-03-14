@@ -41,7 +41,7 @@
     "gulp-env": "0.4.0",
     "gulp-nodemon": "2.4.2",
     "gulp-sourcemaps": "2.6.5",
-    "gulp-typescript": "5.0.0",
+    "gulp-typescript": "5.0.1",
     "html-webpack-plugin": "3.2.0",
     "jasmine": "3.3.1",
     "nodemon": "1.18.10",
