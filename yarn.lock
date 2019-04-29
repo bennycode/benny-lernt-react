@@ -365,10 +365,10 @@
   resolved "https://registry.yarnpkg.com/@types/cookiejar/-/cookiejar-2.1.1.tgz#90b68446364baf9efd8e8349bb36bd3852b75b80"
   integrity sha512-aRnpPa7ysx3aNW60hTiCtLHlQaIFsXFCgQlpakNgDNVFzbtusSY8PwjAQgRWfSk0ekNoBjO51eQRB6upA9uuyw==
 
-"@types/hapi@*", "@types/hapi@18.0.1":
-  version "18.0.1"
-  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-18.0.1.tgz#4e1f76b89b6d939aaab2ecbce7576146f5ea2739"
-  integrity sha512-2YznFunreTu7j+qWp8HU/0qLQ/RVJveWvqRQeT8N5/xOKMe6lIIS6gikNpuCZP5Ugh7WM+kpv9Nh/enVP+4E6w==
+"@types/hapi@*", "@types/hapi@18.0.2":
+  version "18.0.2"
+  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-18.0.2.tgz#2c3ed843e1e7358486eccf64256e91f7918948b2"
+  integrity sha512-I3THPpOY0G0bXNLzyaqUzMIbqPrci21C1Vqlnek348SJq2Gp7TLSnQbwOb+v/xunxCTzY3o2fV3h7uffL3Ln0w==
   dependencies:
     "@types/boom" "*"
     "@types/catbox" "*"
