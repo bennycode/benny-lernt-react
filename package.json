@@ -35,7 +35,7 @@
     "@babel/preset-typescript": "7.3.3",
     "@types/jasmine": "3.3.12",
     "@types/supertest": "2.0.7",
-    "babel-loader": "8.0.5",
+    "babel-loader": "8.0.6",
     "concurrently": "4.1.0",
     "gulp": "4.0.2",
     "gulp-env": "0.4.0",
