@@ -24,7 +24,7 @@
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "sqlite3": "4.1.0",
-    "typeorm": "0.2.19",
+    "typeorm": "0.2.20",
     "vision": "5.4.4"
   },
   "devDependencies": {
